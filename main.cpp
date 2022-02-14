@@ -5,7 +5,9 @@ struct move{
 };
 
 struct TicTacToe{
-    char player, computer, grid[3][3];
+    char player, computer;
+    public:
+        char grid[3][3];
     // constructor for struct TicTacToe
     TicTacToe(){
         for (int i = 0; i < 3; i++){
@@ -19,7 +21,7 @@ struct TicTacToe{
     // checks if someone has won the game
     bool win(){
         // stores all winning states
-        int win_states[8][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
+        const int win_states[8][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
         // iterating through every winning state
         for (int i = 0; i < 8; i++){
             bool win = true;
